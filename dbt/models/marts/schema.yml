@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: mart_daily_prices
+    description: Daily OHLCV per asset (from yfinance Bronze → Silver path).
+    columns:
+      - name: price_date
+        description: Trading date (UTC-aligned from yfinance daily bars).
+      - name: asset
+        description: Normalized symbol (e.g. BTC, ETH).
+  - name: mart_volatility
+    description: Rolling 7d and 30d volatility of log returns.
+  - name: mart_anomalies
+    description: Flags large single-day moves vs 30d rolling volatility.
